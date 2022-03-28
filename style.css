@@ -34,14 +34,15 @@ h6 {
 .featured-link div {
 	text-align: center;
 	background-image: url("stripe-pattern-sand-23pc-opacity.png");
-	background-repeat: ;
 	background-size: 9px;
 	width: 220px;
 	height: 220px;
 	border-radius: 50%;
+  
 	display:grid;
 	justify-content:center;
 	align-items:center;
+  
 	padding:40px;
 	position: relative;
 }
