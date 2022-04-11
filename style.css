@@ -3,6 +3,16 @@
   --black: #000;
 }
 
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes containerSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 html {
   height: 100%;
 }
@@ -48,7 +58,7 @@ a {
   position: relative;
 }
 
-.link-content::before, .link-content::after, .featured-link h6::before {
+.link-content::before, .link-content::after, .link-text::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -84,6 +94,39 @@ a {
   transition: 350ms ease-out 50ms;
 }
 
+.glyph-container {
+  position: absolute;
+  z-index: -1;
+  inset: 50px;
+  animation: containerSpin 30s linear infinite;
+  opacity: 0;
+  
+  transition: opacity 400ms ease-out 150ms;
+}
+
+.glyph {
+  opacity: 0.6;
+  position: absolute;
+  animation: spin 30s linear infinite;
+}
+
+.glyph-01 {
+  top: 0;
+  left: 0;
+}
+.glyph-02 {
+  top: 0;
+  right: 0;
+}
+.glyph-03 {
+  bottom: 0;
+  left: 0;
+}
+.glyph-04 {
+  bottom: 0;
+  right: 0;
+}
+
 
 /* HOVER STYLES ///////////////////////////////////////////////////////////////////////////// */
 
@@ -106,4 +149,8 @@ a {
   inset: -70px;
   
   border: 1px solid rgba(100, 100, 106, 0.8);
+}
+
+.featured-link:hover .glyph-container{
+  opacity: 1;
 }
