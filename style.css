@@ -3,18 +3,17 @@
   --black: #000;
 }
 
-
 html {
   height: 100%;
 }
 
 body {
-  font-family: Arial;
+  font-family: Space Grotesk, Helvetica, San Francisco, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
 
   background-color: var(--black);
-  color: #ffffff;
+  color: var(--sand);
   width: 100%;
 	height: 100%;
 
@@ -27,86 +26,84 @@ a {
   text-decoration: none;
 }
 
-h6 {
+.featured-link h6 {
   text-transform: uppercase;
   color: var(--sand);
   font-weight: 600;
   font-size: 14px;
   line-height: 1.14;
-  font-family: Space Grotesk;
   letter-spacing: 0.1pc;
-  width:100px;
 }
 
-.link-background {
+.link-content {
   text-align: center;
-  background-image: url("stripe-pattern-sand-23pc-opacity.png");
-  background-size: 9px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  width: 240px;
+  height: 240px;
   
   display:grid;
   justify-content:center;
   align-items:center;
   
-  padding:40px;
+  padding:80px;
   position: relative;
-  
-  border: 1px dashed rgba(100, 100, 106, 0.5);
-  padding: 5px;
-  background-clip: content-box; /* support: IE9+ */
-  
-  transition: 200ms ease-out;
 }
 
-.link-background::before {
- content: "";
- position: absolute;
- z-index: -1;
- top: -25px;
- left: -25px;
- right: -25px;
- bottom: -25px;
- border-radius: 50%;
- border: 2px solid rgba(100, 100, 106, 0.3);
- 
- transition: 400ms ease-out ;
-}
-
-.link-background::after {
+.link-content::before, .link-content::after, .featured-link h6::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: -30px;
-  left: -30px;
-  right: -30px;
-  bottom: -30px;
   border-radius: 50%;
-  border: 1px solid rgba(100, 100, 106, 0.3);
-  
-  transition: 450ms ease-out ;
 }
 
-.featured-link:hover .link-background::before{
-  top: -40px;
-  left: -40px;
-  right: -40px;
-  bottom: -40px;
+/* MAIN BODY */
+.link-content::before {
+  background-image: url("stripe-pattern-sand-23pc-opacity.png");
+  background-size: 9px;
+  
+  border: 1px dashed rgba(100, 100, 106, 0.5);
+  padding: 8px;
+  background-clip: content-box;
+  inset: 0px;
+  
+  transition: 200ms ease-out ;
+}
+
+/* INNER STROKE */
+.link-content::after {
+  inset: -25px;  
+  border: 2px solid rgba(100, 100, 106, 0.3);
+  
+  transition: 200ms ease-out 50ms;
+}
+
+/* OUTER STROKE */
+.link-text::before {
+  inset: -30px;
+  border: 1px solid rgba(100, 100, 106, 0.3);
+  
+  transition: 250ms ease-out 50ms;
+}
+
+
+/* HOVER STYLES ///////////////////////////////////////////////////////////////////////////// */
+
+/* MAIN BODY */
+.featured-link:hover .link-content::before{
+  inset: -30px;
+  
+  border: 1px dashed rgba(100, 100, 106, 0.8);
+}
+
+/* INNER STROKE */
+.featured-link:hover .link-content::after{
+  inset: -60px;
   
   border: 2px solid rgba(100, 100, 106, 0.8);
 }
 
-.featured-link:hover .link-background::after{
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
+/* OUTER STROKE */
+.featured-link:hover .link-text::before{
+  inset: -70px;
   
   border: 1px solid rgba(100, 100, 106, 0.8);
-}
-
-.featured-link:hover .link-background{
-  width:280px;
-  height:280px;
 }
