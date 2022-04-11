@@ -65,7 +65,7 @@ a {
   background-clip: content-box;
   inset: 0px;
   
-  transition: 200ms ease-out ;
+  transition: 250ms ease-out ;
 }
 
 /* INNER STROKE */
@@ -73,7 +73,7 @@ a {
   inset: -25px;  
   border: 2px solid rgba(100, 100, 106, 0.3);
   
-  transition: 200ms ease-out 50ms;
+  transition: 300ms ease-out 50ms;
 }
 
 /* OUTER STROKE */
@@ -81,7 +81,7 @@ a {
   inset: -30px;
   border: 1px solid rgba(100, 100, 106, 0.3);
   
-  transition: 250ms ease-out 50ms;
+  transition: 350ms ease-out 50ms;
 }
 
 
